@@ -17,6 +17,7 @@ Package?
  - quarryData
 ]])
 
+print("insert package name")
 local name = read()
 
 print("Install " .. name .. " as startup.lua? (y/n)")

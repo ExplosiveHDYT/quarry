@@ -8,7 +8,15 @@ local url = {
   quarryData = "https://raw.githubusercontent.com/ExplosiveHDYT/quarry/refs/heads/main/quarryData.lua"
 }
 
-print("Package?")
+print([[
+  package?
+  - main
+  - moveX
+  - moveY
+  - moveZ
+  - quarryData
+  
+  ]])
 local name = read()
 
 print("Install " .. name .. " as startup.lua? (y/n)")

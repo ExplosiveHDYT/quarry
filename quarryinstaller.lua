@@ -9,14 +9,14 @@ local url = {
 }
 
 print([[
-  package?
-  - main
-  - moveX
-  - moveY
-  - moveZ
-  - quarryData
-  
-  ]])
+Package?
+ - main
+ - moveX
+ - moveY
+ - moveZ
+ - quarryData
+]])
+
 local name = read()
 
 print("Install " .. name .. " as startup.lua? (y/n)")

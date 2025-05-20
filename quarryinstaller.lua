@@ -5,7 +5,7 @@ local url = {
   moveX = "https://raw.githubusercontent.com/ExplosiveHDYT/quarry/refs/heads/main/moveX.lua",
   moveY = "https://raw.githubusercontent.com/ExplosiveHDYT/quarry/refs/heads/main/moveY.lua",
   moveZ = "https://raw.githubusercontent.com/ExplosiveHDYT/quarry/refs/heads/main/moveZ.lua",
-  quarryData = "https://raw.githubusercontent.com/ExplosiveHDYT/quarry/refs/heads/main/quarryData.lua"
+  quarryData = "https://raw.githubusercontent.com/ExplosiveHDYT/quarry/refs/heads/main/quarryData.lua" ,
   ignoreThisDumbQuarry = "https://raw.githubusercontent.com/ExplosiveHDYT/quarry/refs/heads/main/dumbQuarry.lua"
 }
 

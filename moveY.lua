@@ -1,11 +1,13 @@
 rednet.open("top")
 
+mainID = 69
+
 isActive = false
 
 function dig(x)
 
     isActive = true
-    rednet.send(69, isActive, "moveY")
+    rednet.send(mainID, isActive, "moveY")
 
     if type(x) == "number" then
 
@@ -18,7 +20,7 @@ function dig(x)
             redstone.setOutput("left", false)
 
             isActive = false
-            rednet.send(69, isActive, "moveY")
+            rednet.send(mainID, isActive, "moveY")
         
         elseif x < 0 then
 
@@ -27,7 +29,7 @@ function dig(x)
             redstone.setOutput("right", false)
         
             isActive = false
-            rednet.send(69, isActive, "moveY")
+            rednet.send(mainID, isActive, "moveY")
 
         end
         
@@ -40,7 +42,7 @@ function dig(x)
             sleep(0.2)
 
             isActive = false
-            rednet.send(69, isActive, "moveY")
+            rednet.send(mainID, isActive, "moveY")
 
         elseif x == "stop" then
 
@@ -49,7 +51,7 @@ function dig(x)
             sleep(0.2)
 
             isActive = false
-            rednet.send(69, isActive, "moveY")
+            rednet.send(mainID, isActive, "moveY")
     
         end
     end

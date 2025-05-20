@@ -1,11 +1,13 @@
 rednet.open("top")
 
+mainID = 69
+
 isActive = false
 
 function moveZ(x)
 
     isActive = true
-    rednet.send(69, isActive, "moveZ")
+    rednet.send(mainID, isActive, "moveZ")
 
     if type(x) == "number" then
 
@@ -18,7 +20,7 @@ function moveZ(x)
             redstone.setOutput("right", false)
 
             isActive = false
-            rednet.send(69, isActive, "moveZ")
+            rednet.send(mainID, isActive, "moveZ")
         
         elseif x > 0 then
 
@@ -27,7 +29,7 @@ function moveZ(x)
             redstone.setOutput("left", false)
             
             isActive = false
-            rednet.send(69, isActive, "moveZ")
+            rednet.send(mainID, isActive, "moveZ")
 
         end
     
@@ -40,7 +42,7 @@ function moveZ(x)
             sleep(0.2)
 
             isActive = false
-            rednet.send(69, isActive, "moveZ")
+            rednet.send(mainID, isActive, "moveZ")
         
         elseif x == "-z" then
 
@@ -49,7 +51,7 @@ function moveZ(x)
             sleep(0.2)
 
             isActive = false
-            rednet.send(69, isActive, "moveZ")
+            rednet.send(mainID, isActive, "moveZ")
 
         elseif x == "stop" then
 
@@ -58,7 +60,7 @@ function moveZ(x)
             sleep(0.2)
 
             isActive = false
-            rednet.send(69, isActive, "moveZ")
+            rednet.send(mainID, isActive, "moveZ")
         
         end
     end

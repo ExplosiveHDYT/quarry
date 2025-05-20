@@ -2,6 +2,10 @@ rednet.open("top")
 monitor = peripheral.wrap("left")
 dC = nil
 
+xID = 72
+yID = 74
+zID = 73
+
 -- Collects data and returns coordinates and limits
 function dataCollect()
     local id, pos, protocol = rednet.receive("gpsPosition")
@@ -57,7 +61,7 @@ end
 -- Send command to computerX
 function commandX(x)
 
-    rednet.send(72, x, "moveX")
+    rednet.send(xID, x, "moveX")
 
     local id, isActive, protocol = rednet.receive("moveX")
     while isActive do
@@ -73,7 +77,7 @@ end
 -- Send command to computerZ
 function commandZ(z)
 
-    rednet.send(73, z, "moveZ")
+    rednet.send(zID, z, "moveZ")
 
     local id, isActive, protocol = rednet.receive("moveZ")
     while isActive do
@@ -89,7 +93,7 @@ end
 -- Send command to computerY
 function commandY(y)
 
-    rednet.send(74, y, "moveY")
+    rednet.send(yID, y, "moveY")
 
     local id, isActive, protocol = rednet.receive("moveY")
     while isActive do
@@ -253,6 +257,7 @@ function home()
         dC = dataCollect()
         sleep(0.1)
     end
+    sleep(0.1)
     moveY("stop")
 
     dC = dataPrint()
@@ -268,6 +273,7 @@ function home()
         dC = dataCollect()
         sleep(0.1)
     end
+    sleep(0.1)
     moveZ("stop")
 
     dC = dataPrint()
@@ -277,6 +283,7 @@ function home()
         dC = dataCollect()
         sleep(0.1)
     end
+    sleep(0.1)
     moveX("stop")
 
     dC = dataPrint()
@@ -289,6 +296,7 @@ function home()
         dC = dataCollect()
         sleep(0.1)
     end
+    sleep(0.1)
     moveY("stop")
 
     redstone.setOutput("back", false)
@@ -311,6 +319,7 @@ function moveTo(x,z)
             dC = dataCollect()
             sleep(0.1)
         end
+        sleep(0.1)
         moveY("stop")
 
     end
@@ -443,7 +452,7 @@ end
 
 -- Main program -----------------------------------------------------------------------------------------------------------------------------------------------------
 
-drillArea(-250,140,-220,160,60)
+home()
 
 while true do
     dC = dataPrint()

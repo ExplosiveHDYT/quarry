@@ -354,9 +354,23 @@ function drillPosition(x,z,b)
 
     moveTo(x,z)
 
+
+    local inc = 0
     repeat
 
-        commandY(-10)
+        initialY = dC.y
+
+        commandY(-20)
+
+        finalY = dC.y
+
+        if initialY == finalY then
+            inc = inc + 1
+        end
+
+        else
+            inc = 0
+        end
 
         dC = dataPrint()
         if dC.mCap >= 14 then
@@ -373,7 +387,7 @@ function drillPosition(x,z,b)
 
         end
 
-    until dC.y <= b or dC.y <= bedrock
+    until dC.y <= b or dC.y <= bedrock or inc >= 6
 
     home()
     
